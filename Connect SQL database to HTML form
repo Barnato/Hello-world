@@ -45,7 +45,6 @@ reason varchar(30)
 
 Below is the html form guestbook2.php where guests will input data:
 
-```html
 <!DOCTYPE html>
 <html>
 <body>
@@ -84,7 +83,6 @@ Click here to see Guests Staying in Hotel
 </html>
 <?php
 
-```html
 
 Below is the code from insert_guest.php file which sets up the connection between the guestbook2 database and the html form
 
