@@ -30,82 +30,81 @@ The task was broken down by Tim into these steps:
     
 My code:
 
-CREATE DATABASE guestbook2;
+    CREATE DATABASE guestbook2;
 //You should see this message: “Query OK, 1 row affected (0.00 sec)”
-USE guestbook2
+   USE guestbook2
 //You should see this message “Database changed”
-CREATE TABLE guest (
-guestID int,
-guestname text,
-sign_date date,
-comments varchar(30),
-reason varchar(30)
-);
+    CREATE TABLE guest (
+    guestID int,
+    guestname text,
+    sign_date date,
+    comments varchar(30),
+    reason varchar(30)
+    );
 //You should see this message "Query OK, 0 rows affected (0.01 sec)"
 
-Below is the html form guestbook2.php where guests will input data:
+   Below is the html form guestbook2.php where guests will input data:
 
-<!DOCTYPE html>
-<html>
-<body>
+   <!DOCTYPE html>
+   <html>
+   <body>
   
-<form action="insert_guest.php" method="POST">
-  <!-- guestname:<br>
-  <input type="text" name="guestname">
-  <br>
-  <input type="button" onclick="formSubmit()" value="Send form data!">
-  <input type="submit" name="Click me HARDER BABY"/>
-  <br> -->
-  survey:<br>
+   <form action="insert_guest.php" method="POST">
+   <!-- guestname:<br>
+   <input type="text" name="guestname">
+   <br>
+   <input type="button" onclick="formSubmit()" value="Send form data!">
+   <input type="submit" name="Click me HARDER BABY"/>
+   <br> -->
+   survey:<br>
   
-  Guest Name:
-  <input type="text" name="guestname">
-  <br>
+    Guest Name:
+   <input type="text" name="guestname">
+   <br>
   Did you have a good stay? <input type="text" name="comment">
-  <br>
+   <br>
   why or why not?
-  <input type="text" name="reason">
-  <br>
-  <input type="submit" value="submit"/>
-<br>
-<br>
-<br>
-<thead>Guests staying at hotel - See if you know any!</thead>
-<br>
-<br>
-<img src="http://i.huffpost.com/gen/2367382/images/o-FOUR-WOMEN-FRIENDS-LAUGHING-facebook.jpg" alt="This is how happy you will be if you meet an old friend at the hotel"style="width:304px;height:228px;">
-<br>
-<br>
-Click here to see Guests Staying in Hotel
-<br>
-</body>
-</form>
-</html>
-<?php
-
+   <input type="text" name="reason">
+   <br>
+   <input type="submit" value="submit"/>
+   <br>
+   <br>
+   <br>
+   <thead>Guests staying at hotel - See if you know any!</thead>
+   <br>
+   <br>
+   <img src="http://i.huffpost.com/gen/2367382/images/o-FOUR-WOMEN-FRIENDS-LAUGHING-facebook.jpg" alt="This is how happy you will be if you meet an old friend at the hotel"style="width:304px;height:228px;">
+   <br>
+   <br>
+  Click here to see Guests Staying in Hotel
+   <br>
+   </body>
+   </form>
+   </html>
+   <?php
 
 Below is the code from insert_guest.php file which sets up the connection between the guestbook2 database and the html form
 
-$conn = mysqli_connect("localhost","username","password","guestbook2");
+   $conn = mysqli_connect("localhost","username","password","guestbook2");
 //you will need to input username and password to set up the connection
 
 // Check connection
-if (mysqli_connect_errno())
-  {
+   if (mysqli_connect_errno())
+   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+   }
   // not used connection
-// $myPDO = new PDO('mysql:host=localhost;dbname=guestbook2', 'username', 'password'); 
+  // $myPDO = new PDO('mysql:host=localhost;dbname=guestbook2', 'username', 'password'); 
 
-if ($_POST) {
+   if ($_POST) {
   
-  $sql="INSERT INTO guest (guestname, comments, reason) VALUES ('".$_POST['guestname']."', '".$_POST['comment']."', '".$_POST['reason']."')";
+   $sql="INSERT INTO guest (guestname, comments, reason) VALUES ('".$_POST['guestname']."', '".$_POST['comment']."', '".$_POST['reason']."')";
 
-  if ($conn->query($sql) === TRUE) {
+   if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
-  } else {
+   } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
-  }
-}
-?>
+   }
+   }
+   ?>
 
