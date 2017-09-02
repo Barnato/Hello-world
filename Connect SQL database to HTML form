@@ -1,11 +1,20 @@
-This blog is to document CodeMates, a programming group that meets every Saturday. We are based in Austin. There are four people. Matt Elliot (Developer 1) and Tim Macaulay-Robinson (Developer 2) who have 20 years+ each experience. 
-Vicky Barnato (me) & Travis Austin who are non techs. Both of us come from BA backgrounds and are programming novices. 
+This blog is to document CodeMates, a programming group that meets every Saturday. We are based in Austin. 
+There are four people. Matt Elliot (Developer 1) and 
+Tim Macaulay-Robinson (Developer 2) who have 20 years+ each experience. 
+Vicky Barnato (me) & Travis Austin who are non techs. Both of us come from 
+BA backgrounds and are programming novices. 
  
 Our goals: 
 Matt Elliot: Enhance tech communication and training skills by getting two civilians ready for programming jobs in a year. 
 Tim Macaulay-Robinson: Ditto. 
 
-Vicky Barnato (me) & Travis Austin:  Travis wants to move from Business Analysis to programming.  I want to be less dependent on developers’ explanations to understand how technology works. This blog documents the projects and tasks that Tim and Matt set Travis and me to teach us.  These will be basic tasks at first. Readers with programming experience may find the first couple of posts too basic. Please be patient we are novices! The first part of this post documents how I attempted to create an online guestbook form. Please let me know if you see any mistakes or  want additional explanations. SQL was used for the database, html for the form and PHP to connect the two. 
+Vicky Barnato (me) & Travis Austin:  Travis wants to move from Business Analysis to programming. 
+I want to be less dependent on developers’ explanations to understand how technology works. 
+This blog documents the projects and tasks that Tim and Matt set Travis and me to teach us.  
+These will be basic tasks at first. Readers with programming experience may find the first couple of posts too basic. 
+Please be patient we are novices! The first part of this post documents how I attempted to create an online guestbook form. 
+Please let me know if you see any mistakes or  want additional explanations. 
+SQL was used for the database, html for the form and PHP to connect the two. 
 
 Note: We are using Cloud9 as a collaborative space.
 
