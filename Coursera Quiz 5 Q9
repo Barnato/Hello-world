@@ -1,0 +1,18 @@
+Answer: very large 25451.53
+
+    SELECT(SUM(rev)/sum(td)) AS dailyrevenue,
+    CASE WHEN st.msa_pop>=1 AND st.msa_pop<=100000 THEN 'very_small' 
+    /*Case is used for if/then statements and is used to extract multiple column names with the above 
+    extracting population data and catgeorizing into groups from 'small' to 'large'*/
+    WHEN st.msa_pop>=100001 AND st.msa_pop<=200000 THEN 'small' 
+    WHEN st.msa_pop>=200001 AND st.msa_pop<=500000 THEN 'med_small'  
+    WHEN st.msa_pop>=500001 AND st.msa_pop<=1000000 THEN 'med_large'
+    WHEN st.msa_pop>=1000001 AND st.msa_pop<=5000000 THEN 'large'
+    WHEN st.msa_pop>5000000 THEN ' very_large' END as pop_level FROM UA_Dillards.Store_MSA st 
+    LEFT JOIN (SELECT COUNT(DISTINCT t.saledate) AS td, SUM(t.amt) AS rev, 
+    extract(month FROM t.saledate) || extract(year FROM t.saledate)) AS my 
+    FROM UA_Dillards.Trnsact t WHERE t.stype='p' AND Oreplace ('my',' ','') NOT LIKE '%82005%' HAVING ndays >20) AS trn
+    /*Excludes non purchases (e.g returns) and excludes transactions from August of 2005 and 
+    excludes transactions from months with less than 20 salesdates*/
+    ON st.store=trn.store GROUP BY pop_level;
+    /*Joins MSA_Store table on dervied table called trn and groups by pop_level*/
