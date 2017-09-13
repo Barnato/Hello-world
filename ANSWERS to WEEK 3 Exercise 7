@@ -1,0 +1,56 @@
+2) On what day was Dillard’s income based on total sum of purchases the greatest?
+
+SELECT t.saledate, SUM(t.amt)
+FROM UA_Dillards.TRNSACT t
+GROUP BY t.saledate
+ORDER BY SUM(t.amt) DESC;
+
+Answer: 04/12/18
+
+3) What is the deptdesc of the departments that have the top 3 greatest numbers of skus from the skuinfo table associated with them?
+
+SELECT d.dept,d.deptdesc, COUNT(DISTINCT sku) AS skunum
+FROM SKUINFO s
+LEFT JOIN DEPTINFO d ON s.dept=d.dept
+GROUP BY d.dept,d.deptdesc
+ORDER BY skunum DESC;
+
+Answer: INVEST,POLOMEN, BRIOSO
+
+6) What is the average amount of profit Dillard’s made per day?
+
+SELECT SUM(t.amt-(s.cost*t.quantity))/COUNT(DISTINCT t.saledate) AS avdailygprofit
+FROM UA_Dillards.TRNSACT t
+JOIN UA_Dillards.SKSTINFO s ON t.sku=s.sku AND t.store=s.store
+WHERE t.stype='P';
+
+Answer: 1527903.46
+
+9) How many stores have more than 180,000 distinct skus associated with them in the skstinfo table?
+
+SELECT s.store, COUNT(DISTINCT s.sku)
+FROM UA_Dillards.SKSTINFO s
+GROUP BY s.store
+HAVING COUNT(DISTINCT s.sku)>180000;
+
+Answer: 12 sores
+
+NOT CHECKED
+
+11) How many skus are in the skuinfo table, but NOT in the skstinfo table?
+
+SELECT COUNT(DISTINCT s.sku) FROM UA_Dillards.skuinfo s LEFT JOIN UA_Dillards.skstinfo sk ON s.sku=sk.sku
+WHERE s.sku IS NOT NULL AND sk.sku IS NULL;
+
+Answer: 803966
+
+Q12 In what city and state is the store that had the greatest total sum of sales?
+
+SELECT SUM(t.amt),s.store,s.state,s.city
+FROM UA_Dillards.TRNSACT t
+LEFT JOIN UA_Dillards.STORE_MSA s ON t.store=s.store
+GROUP BY s.store,s.state,s.city,t.store
+ORDER BY SUM(t.amt) DESC;
+
+Answer: 8402 METAIRIE LA 27058653.42
+
