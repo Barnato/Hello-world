@@ -1,3 +1,6 @@
+
+Victoria Barnato and Ganesh Akella's query
+
 select case when a.grade>7
 then a.name
 else NULL
