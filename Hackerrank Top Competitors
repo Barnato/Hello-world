@@ -1,7 +1,20 @@
-SELECT s.hacker_id,h.name FROM HACKERS h JOIN SUBMISSIONS s ON h.hacker_id=s.hacker_id JOIN CHALLENGES c ON s.challenge_id=c.challenge_id
+Julia just finished conducting a coding contest, and she needs your help assembling the leaderboard! 
+Write a query to print the respective hacker_id and name of hackers who achieved full scores for more than one challenge. 
+Order your output in descending order by the total number of challenges in which the hacker earned a full score. 
+If more than one hacker received full scores in same number of challenges, then sort them by ascending hacker_id.
+Only hacker 90411 managed to earn a full score for more than one challenge, so we print the their hacker_id and name 
+as  space-separated values.
+
+
+SELECT s.hacker_id,h.name FROM HACKERS h JOIN SUBMISSIONS s ON h.hacker_id=s.hacker_id 
+JOIN CHALLENGES c ON s.challenge_id=c.challenge_id
 JOIN DIFFICULTY d ON c.difficulty_level=d.difficulty_level
- /*selects those hackers with full scores because difficulty table only includes difficulty levels with their corresponding full scores*/
+ /*selects those hackers with full scores because difficulty table only includes 
+ difficulty levels with their corresponding full scores*/
 WHERE s.score=d.score
-  /*further selects those hackers with full scores because difficulty table only includes difficulty levels with their corresponding full scores*/
+  /*further selects those hackers with full scores because difficulty table only
+  includes difficulty levels with their corresponding full scores*/
 GROUP BY s.hacker_id, h.name 
 HAVING COUNT(s.score)>1 ORDER BY COUNT(s.score) DESC, s.hacker_id ASC;
+
+
