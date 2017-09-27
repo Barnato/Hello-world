@@ -1,0 +1,107 @@
+CREATE  DATABASE CHECKERS;
+CREATE  TABLE CHECKERS.PLAYER (
+id int NOT NULL,
+user_name varchar (64) NOT NULL,
+password varchar (64) NOT NULL,
+nick_name varchar (64),
+email varchar(128) NOT NULL,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE CHECKERS.PIECE (
+id int NOT NULL,
+color int,
+square_id varchar(32),
+starting_position varchar(32),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE CHECKERS.MOVE_TYPE  (
+id int NOT NULL,
+color int,
+starting_position varchar(32),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE CHECKERS.MOVE
+(
+id int NOT NULL,
+square_id varchar(32),
+participant_id int,
+move_type_id int,
+move_order varchar(32),
+from_position varchar(32),
+to_position varchar(32),
+Foreign KEY (square_id) REFERENCES PIECE(square_id),
+PRIMARY KEY (id)
+);
+
+
+CREATE TABLE CHECKERS.PARTICIPANT (
+id INT NOT NULL,
+player_id INT,
+game_id int,
+score decimal(5.2),
+rating int,
+PRIMARY KEY (id),
+Foreign KEY (player_id),
+Foreign KEY (game_id);
+
+CREATE TABLE CHECKERS.GAME (
+id int NOT NULL,
+start_time timestamp,
+end_time timestamp,
+max_number_of_players int,
+player_started_id int,
+result_id int,
+board_dimensions varchar(128),
+move_time_limit varchar(128),
+game_time_limit varchar(128),
+PRIMARY KEY (id),
+Foreign KEY (player_started_id),
+Foreign KEY (result_id),
+);
+
+CREATE TABLE CHECKERS.STATUS (
+id int NOT NULL,
+winner_id int NOT NULL,
+loser_id int NOT NULL,
+score_id int NOT NULL,
+result_id int,
+description varchar(128),
+PRIMARY KEY (id),
+);
+
+CREATE TABLE CHECKER.INVITATION (
+id int NOT NULL,
+opponent_id INT,
+invitesent_time timestamp,
+inviteaccepted_time timestamp,
+inviteaccepted CHAR(1),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE CHECKERS.MESSAGE (
+id INT NOT NULL,
+player_id INT,
+message_id INT,
+chat_room_id INT,
+message_text text,
+created_at DATETIME,
+PRIMARY KEY (id)
+); 
+
+
+CREATE TABLE CHECKERS.MOVEPOSITION ( 
+  moveposition_id int NOT NULL auto_increment, 
+  game_id int NOT NULL, participant_id int NOT NULL, 
+  square_id int NOT NULL, move_type_id int NOT NULL, 
+  move_order varchar(32) NOT NULL, 
+  from_position varchar(32) NOT NULL, 
+  to_position varchar(32) NOT NULL, 
+  PRIMARY KEY (moveposition_id), 
+  FOREIGN KEY (square_id) REFERENCES PIECE(id), 
+  FOREIGN KEY (participant_id) REFERENCES PARTICIPANT(id), 
+  FOREIGN KEY (game_id) REFERENCES GAME(id), 
+  FOREIGN KEY (move_type_id) REFERENCES MOVE_TYPE(id)
+);
