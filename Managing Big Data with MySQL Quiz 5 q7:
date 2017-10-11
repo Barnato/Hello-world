@@ -13,7 +13,4 @@ SUM(t.AMT) AS totalrev, COUNT(DISTINCT t.saledate) AS tsaledates,(totalrev/tsale
 FROM UA_Dillards.Trnsact t LEFT JOIN UA_Dillards.STORE_MSA sm ON t.store=sm.store WHERE t.stype='p' 
 GROUP by t.store, sm.store,sm.state,sm.city ORDER BY bigincome desc,avgdailyrev;
 
-SELECT t.store, sm.store, min(sm.msa_income) as smallincome, sm.city, sm.state, 
-SUM(t.AMT) AS totalrev, COUNT(DISTINCT t.saledate) AS tsaledates,(totalrev/tsaledates) AS avgdailyrev 
-FROM UA_Dillards.Trnsact t LEFT JOIN UA_Dillards.STORE_MSA sm ON t.store=sm.store WHERE t.stype='p' 
-GROUP by t.store, sm.store,sm.state,sm.city ORDER BY smallincome asc,avgdailyrev;
+
