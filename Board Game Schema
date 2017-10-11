@@ -36,7 +36,6 @@ Foreign KEY (square_id) REFERENCES PIECE(square_id),
 PRIMARY KEY (id)
 );
 
-
 CREATE TABLE CHECKERS.PARTICIPANT (
 id INT NOT NULL,
 player_id INT,
@@ -90,7 +89,6 @@ message_text text,
 created_at DATETIME,
 PRIMARY KEY (id)
 ); 
-
 
 CREATE TABLE CHECKERS.MOVEPOSITION ( 
   moveposition_id int NOT NULL auto_increment, 
