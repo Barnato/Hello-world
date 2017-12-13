@@ -1,0 +1,20 @@
+A median is defined as a number separating the higher half of a data set from the lower half. Query the median of the Northern Latitudes (LAT_N) from STATION and round your answer to  decimal places.
+
+I solved this using two (2) solutions:
+
+First, find out the number of northern latitudes, the table contains. You do this by counting the number of rows containing Northern Latitudes.
+
+SELECT COUNT(LAT_N) FROM STATION;
+
+Answer: 499 rows
+
+You know that the median lies between the 249th and 250th row. So you need to exclude the first 249 rows or 249 northern latitudes.
+OFFSET excludes sets of records. The below says return only one record starting on the 250th record.
+
+SELECT
+ROUND(LAT_N, 4)
+FROM
+STATION
+ORDER BY
+LAT_N
+LIMIT 1 OFFSET 249;
