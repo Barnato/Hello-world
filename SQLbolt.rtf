@@ -1,0 +1,89 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red53\green53\blue53;}
+{\*\expandedcolortbl;;\cssrgb\c27059\c27059\c27059;}
+\margl1440\margr1440\vieww28300\viewh15460\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs24 \cf2 SQLBOLT1	\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf2 \
+SQL bolt\
+\
+sqlbolt.com\
+\
+Exercise 1\
+\
+Movies table\
+\
+1. Find the title of each film\uc0\u8232 solution:\
+SELECT title FROM Movies;\
+\
+2. Find the director of each film\
+\uc0\u8232 SELECT director FROM movies;\u8232 \
+3. Find the title and director of each film\
+\
+SELECT title, director FROM movies;\uc0\u8232 \
+4. Find the title and year of each film\
+\
+SELECT 	title, year FROM movies;\
+\
+5. FIND all the information about each film\uc0\u8232 \u8232 \
+SELECT * FROM movies;\uc0\u8232 \u8232 \
+Exercise 2\uc0\u8232 \
+\
+1. Find the movie with a row id of 6\
+\
+SELECT title FROM movies WHERE id = 6;\
+\
+2. Find the movies released in the year s between 2000 and 2010\uc0\u8232 \
+SELECT title FROM movies WHERE year BETWEEN 2000 AND 2010;\uc0\u8232 \u8232 3. Find the movies not released in the years between 2000 and 2010\u8232 \
+SELECT title, year FROM movies WHERE year < 2000 or year > 2010;\
+\
+4. Find the first 5 Pixar movies and their release year\uc0\u8232 \
+SELECT title, year FROM movies WHERE year < 2004;\
+\
+Exercise 3\
+\
+1. Find all the Toy Story movies\
+\uc0\u8232 SELECT title FROM movies WHERE title LIKE "Toy Story%";\
+\
+2. Find all the movies directed by John Lasseter\
+\
+SELECT title FROM movies Where director = "John Lasseter";\
+\
+3. Find all the movies (and director) not directed by John Lasseter\
+\
+SELECT title, director FROM movies WHERE director <>"John Lasseter";\
+\
+4. Find all the WALL-* moviesSELECT title FROM movies WHERE title LIKE "Wall-%";\
+\
+Exercise 4\uc0\u8232 \
+1. List all directors of Pixar movies (alphabetically), without duplicates\uc0\u8232 \
+SELECT DISTINCT director FROM movies ORDER BY director DESC;\uc0\u8232 \
+2. List the last four Pixar movies released (ordered from most recent to least)\
+\uc0\u8232 SELECT title, year FROM movies ORDER BY YEAR DESC LIMIT 4;\u8232 \u8232 3. List the first five Pixar movies sorted alphabetically\
+\
+SELECT title FROM movies ORDER BY title ASC LIMIT 5;\
+\
+4. 	List the next five Pixar movies sorted alphabetically\
+\
+SELECT title FROM movies ORDER BY title DESC LIMIT 5 OFFSET 5;\uc0\u8232 \
+Review 1 - Task\
+\
+1. List all the cities and their populations, in the United States\
+\
+SELECT city, population FROM North_american_cities WHERE country = "Canada";\uc0\u8232 \
+2.	Order all the cities in the United States by their latitude from north to south\
+\uc0\u8232 SELECT city FROM North_american_cities WHERE country ="United States" ORDER BY latitude DESC;\
+\
+3. List all the cities west of Chicago, ordered from west to east\
+\
+SELECT city FROM North_american_cities WHERE Longitude < -87.629798 ORDER BY Longitude ASC;\
+\
+4. List the two largest cities in Mexico (by population)\
+\
+SELECT city, population FROM North_american_cities WHERE country = "Mexico" ORDER BY population DESC Limit 2;\
+\uc0\u8232 5. List the third and fourth largest cities by population in the United States\u8232 SELECT city, population FROM North_american_cities WHERE country = "Mexico" ORDER BY population DESC Limit 2;\
+}
