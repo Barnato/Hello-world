@@ -1,0 +1,17 @@
+<html>
+    <head>
+		<title></title>
+	</head>
+	<body>
+      <p>
+        <?php
+         $name = "vicky";
+         // Create variable
+         $namelength = strlen($name);
+         // Create variable for counting the number of characters of your name
+         echo $namelength;
+         // print out the characters
+        ?>
+      </p>
+    </body>
+</html>
