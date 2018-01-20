@@ -1,5 +1,5 @@
-# Hello-world
-SQL Practice
+
+SQL
 
 This is a personal repository of SQL code samples including:
 
@@ -8,4 +8,6 @@ This is a personal repository of SQL code samples including:
 •	SELECT queries as part of Hackerrank challenges
 
 •	Creation of databases as part of my work with Code-Mates, a programming meet-up group based in Austin.
+
+Recently I have started adding PHP code samples to this repository. So far these are code samples created whilst doing the Codeacademy PHP course. 
  
