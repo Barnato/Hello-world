@@ -1,20 +1,20 @@
 <html>
  <p>
-	<?php
-	$family = array();
-	// Creates the array
-	array_push($family, "vicky");
-	array_push($family, "susy");
-	array_push($family, "katy");
-	// Pushes 3 elements into the array
-	sort($family);
-	// Sorts array
-	$familysise = count($family);
-	// Counts the number of elements in the array
-	$bestfamilymember = $family[rand(0,$familysise-1)];
-	// Randonly selects an element name from the list of elements by using 0 (zero) and -1, which is the last element in the    array
+<?php
+$family = array();
+// Creates the array
+array_push($family, "vicky");
+array_push($family, "susy");
+array_push($family, "katy");
+// Pushes 3 elements into the array
+sort($family);
+// Sorts array
+$familysise = count($family);
+// Counts the number of elements in the array
+$bestfamilymember = $family[rand(0,$familysise-1)];
+// Randonly selects an element name from the list of elements by using 0 (zero) and -1, which is the last element in the    array
 print strtoupper($bestfamilymember);
  // Prints the winner's name in caps
-	?>
-	</p>
- </html>
+?>
+</p>
+</html>
