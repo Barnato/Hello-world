@@ -1,0 +1,28 @@
+
+Codecademy
+
+Objects in PHP
+
+Building Your First Class
+
+Codecademy/Pro
+
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Reconstructing the Person Class</title>
+      <link type='text/css' rel='stylesheet' href='style.css'/>
+	</head>
+	<body>
+      <p>
+      <?php
+      class Person {
+      //Create a Person class
+      }
+       $teacher = new Person();
+       $student = new Person();
+       //Create two instances of the Person class: $teacher and $student
+      ?>
+      </p>
+    </body>
+</html>
