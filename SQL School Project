@@ -1,0 +1,55 @@
+CREATE TABLE privateschools (
+  yeardate YEAR,
+ name varchar(255),
+ address varchar (255),
+ census_track INT NOT NULL,
+ PRIMARY KEY (census_track)
+);
+
+CREATE TABLE crimestats (
+  yeardate YEAR,
+  crime_type varchar (255),
+  report_year_crime_totel varchar (255),
+ census_track INT NOT NULL,
+ PRIMARY KEY (census_track)
+  );
+  
+  CREATE TABLE householdincome (
+    yeardate YEAR,
+    census_track INT NOT NULL,
+    report_year_income_total varchar (255),
+    PRIMARY KEY (census_track)
+    );
+    
+INSERT INTO householdincome (yeardate, census_track, report_year_income_total) VALUES
+('2015','1','44951'),
+('2015','2','56208'),
+('2015','3','64297'),
+('2015','4','32472'),
+('2015','5','125400'),
+('2015','6','60131'),
+('2015','7','51741'),
+('2015','8','87222'),
+('2015','9','125109'),
+('2015','10','69643'),
+('2015','11','64549'),
+('2015','12','31863'),
+('2015','13','56744'),
+('2015','14','72428'),
+('2015','15','95927'),
+('2015','16','96193'),
+('2015','17','65188'),
+('2015','18','87159'),
+('2015','19','61391'),
+('2015','20','80400'),
+('2015','21','85759'),
+('2015','22','132981'),
+('2015','24','103917'),
+('2015','25','101413'),
+('2015','26','91458'),
+('2015','27','111661'),
+('2015','28','90568'),
+('2015','29','103750'),
+('2015','30','90789');
+
+
