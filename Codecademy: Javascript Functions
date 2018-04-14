@@ -1,0 +1,12 @@
+Let's include a parameter in the takeOrder() function to make the orders we log to the console more descriptive.
+
+Inside the parentheses of the takeOrder() function, add a parameter named topping.
+
+Result: Order: pizza topped with cheese
+
+const takeOrder = (topping) => {
+  console.log('Order: pizza topped with ' + topping);
+};
+
+takeOrder('cheese');
+
