@@ -1,0 +1,27 @@
+1.Imagine you work at a pizza restaurant and you want to write a JavaScript program to take orders so you don't have to write orders by hand. You can write a function to perform this task!
+
+Start by writing a function using the keyword const and the name takeOrder. Then set the variable = to a set of parentheses followed by an arrow () =>. Inside of its block {}, use console.log() to print 'Order: pizza'.
+
+2. Under the function, let's take an order. Call the takeOrder() function on the last line. 
+
+Result:
+
+Order: pizza.
+
+if (age += 19 && registeredearly) {
+console.log('1000', raceNumber);
+}
+if (age += 25 && registeredearly) {
+  console.log('you will run at 9:30am', raceNumber);
+}
+if (age += 25 && !registeredearly) {console.log('you will run at 11:00am', raceNumber);
+if (age == 16 && registeredearly) {console.log('you will run at 12:30pm', raceNumber);}
+if (age == 16 && registeredearly) {console.log('you will run at 12:30 pm', raceNumber);}
+                                   }
+if (age +=19 && registeredearly) {console.log('you will race at 9:30am', raceNumber);}
+
+  else if (age +=19 && !registeredearly) { console.log('you will race at 11:00am', raceNumber);
+  }
+
+else if (age < 18) {
+  console.log('you will race at 12:30pm', raceNumber);
